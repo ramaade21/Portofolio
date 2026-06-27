@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ade Ramadona — IT Programmer</title>
+<meta name="description" content="IT Programmer berpengalaman 8+ tahun dalam pengembangan backend, spesialis PHP/Laravel, CodeIgniter, dan administrasi infrastruktur server.">
+
+<meta property="og:title" content="Ade Ramadona — IT Programmer">
+<meta property="og:description" content="IT Programmer berpengalaman 8+ tahun dalam pengembangan backend, spesialis PHP/Laravel, CodeIgniter, dan administrasi infrastruktur server.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ade Ramadona",
+  "jobTitle": "IT Programmer",
+  "email": "vflanker@gmail.com"
+}
+</script>
+</head>
+<body class="antialiased">
+
+<div id="cd"></div>
+<div id="cr"></div>
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<nav style="position:fixed; top:0; left:0; right:0; z-index:50; backdrop-filter:blur(20px); border-bottom:1px solid var(--gb); background: var(--gl);">
+    <div class="max-w-6xl" style="display:flex; align-items:center; justify-content:space-between; height:64px; padding:0 1.5rem;">
+        <span class="font-display" style="font-weight:700; font-size:.85rem; letter-spacing:.15em; color: var(--c);">
+            AR<span style="color: var(--t2);">.DEV</span>
+        </span>
+
+        <div class="font-mono" style="display:flex; align-items:center; gap:2rem; font-size:.68rem; text-transform:uppercase; letter-spacing:.15em; color: var(--t2);" id="desktop-nav">
+            <a href="#about" data-cursor-hover data-i18n data-id="TENTANG" data-en="ABOUT">TENTANG</a>
+            <a href="#experience" data-cursor-hover data-i18n data-id="PENGALAMAN" data-en="EXPERIENCE">PENGALAMAN</a>
+            <a href="#skills" data-cursor-hover data-i18n data-id="SKILL" data-en="SKILLS">SKILL</a>
+            <a href="#projects" data-cursor-hover data-i18n data-id="PROYEK" data-en="PROJECTS">PROYEK</a>
+            <a href="#contact" data-cursor-hover data-i18n data-id="KONTAK" data-en="CONTACT">KONTAK</a>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:.75rem;">
+            <div style="position:relative;">
+                <button data-lang-toggle class="font-mono" style="font-size:.65rem; text-transform:uppercase; letter-spacing:.15em; color: var(--t2); background:none; border:none; cursor:pointer; padding:.25rem .5rem;" data-cursor-hover>
+                    <span data-lang-current>ID</span>
+                </button>
+                <div data-lang-menu class="glass hidden" style="position:absolute; right:0; margin-top:.5rem; width:7rem; padding:.25rem 0; z-index:60;">
+                    <a href="#" data-lang-option="id" style="display:block; padding:.5rem .75rem; font-size:.75rem; text-decoration:none; color:var(--t);">Indonesia</a>
+                    <a href="#" data-lang-option="en" style="display:block; padding:.5rem .75rem; font-size:.75rem; text-decoration:none; color:var(--t);">English</a>
+                </div>
+            </div>
+
+            <button data-theme-toggle aria-label="Toggle theme" class="glass" style="width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; color: var(--c); background:none; cursor:pointer;" data-cursor-hover>
+                <svg data-icon-dark xmlns="http://www.w3.org/2000/svg" style="width:16px; height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36 6.36l-.7-.7M6.34 6.34l-.7-.7m12.02 0l-.7.7M6.34 17.66l-.7.7M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                <svg data-icon-light xmlns="http://www.w3.org/2000/svg" style="width:16px; height:16px; display:none;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            </button>
+
+            <button id="mobile-menu-toggle" aria-label="Menu" style="display:none; background:none; border:none; color:var(--t); font-size:1.4rem; cursor:pointer;">☰</button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden font-mono mobile-menu-panel" style="background: var(--gl); border-top:1px solid var(--gb); padding:1rem 1.5rem; gap:1rem; font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; color: var(--t2);">
+        <a href="#about" data-i18n data-id="Tentang" data-en="About">Tentang</a>
+        <a href="#experience" data-i18n data-id="Pengalaman" data-en="Experience">Pengalaman</a>
+        <a href="#skills" data-i18n data-id="Skill" data-en="Skills">Skill</a>
+        <a href="#projects" data-i18n data-id="Proyek" data-en="Projects">Proyek</a>
+        <a href="#contact" data-i18n data-id="Kontak" data-en="Contact">Kontak</a>
+    </div>
+</nav>
+
+<div id="prog"></div>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section id="home" style="position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:0 1.5rem; padding-top:4rem; overflow:hidden;">
+    <canvas id="particles-canvas" style="position:absolute; inset:0; width:100%; height:100%; opacity:.6; pointer-events:none;"></canvas>
+    <div style="position:absolute; inset:0; pointer-events:none; background: radial-gradient(circle at 20% 20%, rgba(0,245,255,.06), transparent 50%), radial-gradient(circle at 80% 80%, rgba(0,128,255,.05), transparent 50%);"></div>
+
+    <div class="hero-grid" style="position:relative; z-index:10; max-width:64rem; width:100%; display:grid; gap:3rem; align-items:center;">
+        <div class="fade-up hero-text" style="text-align:center;">
+            <p class="font-mono" style="font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; margin-bottom:1rem; color: var(--c);">
+                <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--c); margin-right:.5rem;" class="animate-pulse-dot"></span>
+                <span data-i18n data-id="Tersedia untuk proyek baru" data-en="Available for new projects">Tersedia untuk proyek baru</span>
+            </p>
+
+            <h1 class="font-display" style="font-weight:900; font-size:2.6rem; line-height:1.15; margin-bottom:.75rem; color: var(--t);">
+                Ade Ramadona
+            </h1>
+
+            <p class="font-mono" style="font-size:1.05rem; margin-bottom:1.5rem; height:2rem; color: var(--c);" id="typing-target" data-typing-roles='["Backend Developer","PHP Developer","Laravel Developer","CodeIgniter Developer","DevOps Engineer","IT Programmer"]'></p>
+
+            <p style="color: var(--t2); font-size:1rem; line-height:1.6; margin-bottom:2rem; max-width:32rem; margin-left:auto; margin-right:auto;"
+               data-i18n
+               data-id="IT Programmer berpengalaman 8+ tahun dalam pengembangan backend, spesialis PHP/Laravel, CodeIgniter, dan administrasi infrastruktur server."
+               data-en="IT Programmer with 8+ years of experience in backend development, specializing in PHP/Laravel, CodeIgniter, and server infrastructure administration.">
+                IT Programmer berpengalaman 8+ tahun dalam pengembangan backend, spesialis PHP/Laravel, CodeIgniter, dan administrasi infrastruktur server.
+            </p>
+
+            <div style="display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center;">
+                <button id="open-book-btn" class="btn btn-c" data-cursor-hover>
+                    📖 <span data-i18n data-id="Lihat Profil" data-en="View Profile">Lihat Profil</span>
+                </button>
+                <a href="#contact" class="btn btn-o" data-cursor-hover>
+                    <span data-i18n data-id="Hire Me" data-en="Hire Me">Hire Me</span>
+                </a>
+            </div>
+
+            <div class="font-mono" style="display:flex; gap:2rem; margin-top:2.5rem; justify-content:center;">
+                <div>
+                    <p style="font-size:1.5rem; font-weight:700; color: var(--c); margin:0;"><span data-counter="8">0</span>+</p>
+                    <p style="font-size:.65rem; text-transform:uppercase; letter-spacing:.15em; color: var(--t3); margin:0;" data-i18n data-id="Tahun Pengalaman" data-en="Years Exp.">Tahun Pengalaman</p>
+                </div>
+                <div>
+                    <p style="font-size:1.5rem; font-weight:700; color: var(--c); margin:0;"><span data-counter="6">0</span>+</p>
+                    <p style="font-size:.65rem; text-transform:uppercase; letter-spacing:.15em; color: var(--t3); margin:0;" data-i18n data-id="Klien Korporat" data-en="Corporate Clients">Klien Korporat</p>
+                </div>
+                <div>
+                    <p style="font-size:1.5rem; font-weight:700; color: var(--c); margin:0;"><span data-counter="15">0</span>+</p>
+                    <p style="font-size:.65rem; text-transform:uppercase; letter-spacing:.15em; color: var(--t3); margin:0;" data-i18n data-id="Teknologi" data-en="Technologies">Teknologi</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex; justify-content:center;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:1.5rem;">
+                <div id="book-cover" class="book-cover animate-page-float" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 1.5rem;" data-cursor-hover>
+                    <div class="book-spine-label">PORTFOLIO</div>
+
+                    <div class="glass" style="width:96px; height:96px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; overflow:hidden; border:2px solid var(--cb);">
+                        <span class="font-display" style="font-weight:700; font-size:1.75rem; color: var(--c);">AR</span>
+                    </div>
+
+                    <h2 class="font-display" style="font-weight:700; font-size:1.1rem; margin:0 0 .25rem; color: var(--t);">Ade Ramadona</h2>
+                    <p class="font-mono" style="font-size:.65rem; text-transform:uppercase; letter-spacing:.15em; margin:0 0 1rem; color: var(--c);">IT PROGRAMMER</p>
+
+                    <p class="font-mono" style="font-size:.6rem; color: var(--t3); font-style:italic; margin:0;" data-i18n data-id='&quot;Membangun sistem yang tangguh, baris demi baris.&quot;' data-en='&quot;Building robust systems, line by line.&quot;'>"Membangun sistem yang tangguh, baris demi baris."</p>
+
+                    <div class="font-mono" style="margin-top:1.5rem; font-size:.6rem; text-transform:uppercase; letter-spacing:.15em; color: var(--t3); display:flex; align-items:center; gap:.5rem;">
+                        <span data-i18n data-id="Klik untuk membuka" data-en="Click to open">Klik untuk membuka</span> <span style="color: var(--c);">→</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); font-family:'JetBrains Mono',monospace; font-size:.6rem; text-transform:uppercase; letter-spacing:.15em; color: var(--t3); display:flex; flex-direction:column; align-items:center; gap:.5rem;" class="fade-up">
+        <span data-i18n data-id="Scroll" data-en="Scroll">Scroll</span>
+        <span style="width:1px; height:32px; background: linear-gradient(to bottom, var(--c), transparent);"></span>
+    </div>
+</section>
+
+<div id="scroll-sections">
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section id="about" class="section-pad max-w-5xl">
+    <div class="fade-up section-head">
+        <p class="font-mono eyebrow" style="color: var(--c);" data-i18n data-id="Tentang Saya" data-en="About Me">Tentang Saya</p>
+        <h2 class="font-display section-title" style="color: var(--t);" data-i18n data-id="Profil Singkat" data-en="Brief Profile">Profil Singkat</h2>
+    </div>
+
+    <div class="grid-2 gap-10">
+        <div class="fade-up">
+            <p style="color: var(--t2); line-height:1.7; margin-bottom:1.5rem;"
+               data-i18n
+               data-id="Saya adalah seorang IT Programmer dengan pengalaman lebih dari 8 tahun di industri teknologi, berfokus pada pengembangan aplikasi backend menggunakan PHP, Laravel, dan CodeIgniter. Selama berkarier, saya telah menangani berbagai proyek migrasi sistem legacy ke platform web modern serta pengembangan sistem internal untuk klien-klien perbankan besar. Selain pengembangan perangkat lunak, saya juga memiliki kemampuan DevOps dan administrasi database yang kuat, mencakup pengelolaan server, containerization, serta CI/CD pipeline."
+               data-en="I am an IT Programmer with over 8 years of experience in the technology industry, focusing on backend application development using PHP, Laravel, and CodeIgniter. Throughout my career, I have handled various legacy system migration projects to modern web platforms as well as internal system development for major banking clients. Beyond software development, I also have strong DevOps and database administration skills, covering server management, containerization, and CI/CD pipelines.">
+                Saya adalah seorang IT Programmer dengan pengalaman lebih dari 8 tahun di industri teknologi, berfokus pada pengembangan aplikasi backend menggunakan PHP, Laravel, dan CodeIgniter. Selama berkarier, saya telah menangani berbagai proyek migrasi sistem legacy ke platform web modern serta pengembangan sistem internal untuk klien-klien perbankan besar. Selain pengembangan perangkat lunak, saya juga memiliki kemampuan DevOps dan administrasi database yang kuat, mencakup pengelolaan server, containerization, serta CI/CD pipeline.
+            </p>
+            <p class="font-mono eyebrow" style="color: var(--c); margin-bottom:.5rem;" data-i18n data-id="Tujuan Karier" data-en="Career Goal">Tujuan Karier</p>
+            <p style="color: var(--t2); line-height:1.7;"
+               data-i18n
+               data-id="Terus berkembang sebagai backend engineer & DevOps yang mampu merancang sistem yang scalable, aman, dan mudah dipelihara, sambil berkontribusi pada tim yang membangun produk berdampak nyata bagi penggunanya."
+               data-en="Continue growing as a backend & DevOps engineer capable of designing scalable, secure, and maintainable systems, while contributing to teams building products with real impact for their users.">
+                Terus berkembang sebagai backend engineer & DevOps yang mampu merancang sistem yang scalable, aman, dan mudah dipelihara, sambil berkontribusi pada tim yang membangun produk berdampak nyata bagi penggunanya.
+            </p>
+        </div>
+
+        <div class="fade-up">
+            <p class="font-mono eyebrow" style="color: var(--c); margin-bottom:.75rem;" data-i18n data-id="Bidang Keahlian" data-en="Expertise">Bidang Keahlian</p>
+            <ul class="bullet-list" style="margin-bottom:1.5rem;" id="expertise-list">
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Pengembangan backend dengan Laravel & CodeIgniter" data-en="Backend development with Laravel & CodeIgniter">Pengembangan backend dengan Laravel & CodeIgniter</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Migrasi sistem legacy ke platform web modern" data-en="Legacy system migration to modern web platforms">Migrasi sistem legacy ke platform web modern</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Administrasi database (MySQL, MariaDB, PostgreSQL)" data-en="Database administration (MySQL, MariaDB, PostgreSQL)">Administrasi database (MySQL, MariaDB, PostgreSQL)</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="DevOps: Docker, CI/CD (GitHub Actions, GitLab CI)" data-en="DevOps: Docker, CI/CD (GitHub Actions, GitLab CI)">DevOps: Docker, CI/CD (GitHub Actions, GitLab CI)</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Integrasi REST API untuk sistem perbankan" data-en="REST API integration for banking systems">Integrasi REST API untuk sistem perbankan</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Pengelolaan infrastruktur server Linux" data-en="Linux server infrastructure management">Pengelolaan infrastruktur server Linux</span></li>
+            </ul>
+
+            <p class="font-mono eyebrow" style="color: var(--c); margin-bottom:.75rem;" data-i18n data-id="Soft Skill" data-en="Soft Skills">Soft Skill</p>
+            <div class="chip-row">
+                <span class="chip">Problem Solving</span>
+                <span class="chip">Team Collaboration</span>
+                <span class="chip">Adaptability</span>
+                <span class="chip">Time Management</span>
+                <span class="chip">Communication</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ EDUCATION ═══════════════════════ -->
+<section id="education" class="section-pad max-w-4xl">
+    <div class="fade-up section-head">
+        <p class="font-mono eyebrow" style="color: var(--c);" data-i18n data-id="Pendidikan" data-en="Education">Pendidikan</p>
+        <h2 class="font-display section-title" style="color: var(--t);" data-i18n data-id="Riwayat Pendidikan" data-en="Education History">Riwayat Pendidikan</h2>
+    </div>
+
+    <div class="fade-up glass" style="padding:1.75rem;">
+        <p class="font-mono" style="font-size:.7rem; color: var(--c); margin-bottom:.5rem;">2007 — 2012</p>
+        <h3 class="font-display" style="font-size:1.2rem; font-weight:700; color: var(--t); margin:0 0 .25rem;">STMIK Pranata Indonesia</h3>
+        <p style="color: var(--t2); margin:0 0 .75rem;">Teknik Informatika — GPA 3.03</p>
+        <p style="color: var(--t2); line-height:1.6; margin:0 0 .5rem;" data-i18n
+           data-id="Program studi Teknik Informatika dengan fokus pada pengembangan perangkat lunak dan sistem informasi."
+           data-en="Informatics Engineering program with a focus on software development and information systems.">
+            Program studi Teknik Informatika dengan fokus pada pengembangan perangkat lunak dan sistem informasi.
+        </p>
+        <p class="font-mono" style="font-size:.75rem; color: var(--t3);">
+            <span data-i18n data-id="Skripsi" data-en="Thesis">Skripsi</span>:
+            <span data-i18n data-id="Sistem Informasi Penjualan Handphone Berbasis Desktop" data-en="Desktop-Based Mobile Phone Sales Information System">Sistem Informasi Penjualan Handphone Berbasis Desktop</span>
+        </p>
+    </div>
+</section>
+
+<!-- ═══════════════════════ EXPERIENCE ═══════════════════════ -->
+<section id="experience" class="section-pad max-w-4xl">
+    <div class="fade-up section-head">
+        <p class="font-mono eyebrow" style="color: var(--c);" data-i18n data-id="Pengalaman" data-en="Experience">Pengalaman</p>
+        <h2 class="font-display section-title" style="color: var(--t);" data-i18n data-id="Riwayat Pekerjaan" data-en="Work History">Riwayat Pekerjaan</h2>
+    </div>
+
+    <div style="position:relative; padding-left:2rem; border-left:2px solid var(--cb);">
+
+        <div class="fade-up" style="position:relative; margin-bottom:3rem;">
+            <span style="position:absolute; left:-41px; top:4px; width:16px; height:16px; border-radius:50%; background:var(--c); box-shadow:0 0 12px var(--c);"></span>
+            <p class="font-mono" style="font-size:.75rem; margin-bottom:.25rem; color: var(--c);">
+                2022 — <span data-i18n data-id="Sekarang" data-en="Present">Sekarang</span>
+                <span style="margin-left:.5rem; font-size:.6rem; padding:.15rem .5rem; border-radius:4px; background: var(--cg);" data-i18n data-id="Saat Ini" data-en="Current">Saat Ini</span>
+            </p>
+            <h3 class="font-display" style="font-size:1.15rem; font-weight:700; color: var(--t); margin:0 0 .25rem;">Backend Developer / DevOps Engineer</h3>
+            <p style="color: var(--t2); margin:0 0 .75rem;">PT Danamas Insan Kreasi Andalan — Jakarta</p>
+            <ul class="bullet-list" style="margin-bottom:.75rem;">
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Mengembangkan dan memelihara aplikasi backend berbasis Laravel untuk kebutuhan integrasi sistem perbankan." data-en="Developed and maintained Laravel-based backend applications for banking system integration needs.">Mengembangkan dan memelihara aplikasi backend berbasis Laravel untuk kebutuhan integrasi sistem perbankan.</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Mengelola infrastruktur server dan deployment menggunakan Docker dan CI/CD pipeline." data-en="Managed server infrastructure and deployment using Docker and CI/CD pipelines.">Mengelola infrastruktur server dan deployment menggunakan Docker dan CI/CD pipeline.</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Melakukan integrasi REST API dengan berbagai sistem perbankan klien korporat." data-en="Performed REST API integration with various corporate banking client systems.">Melakukan integrasi REST API dengan berbagai sistem perbankan klien korporat.</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Bertanggung jawab atas administrasi database dan optimasi query untuk performa sistem." data-en="Responsible for database administration and query optimization for system performance.">Bertanggung jawab atas administrasi database dan optimasi query untuk performa sistem.</span></li>
+            </ul>
+            <div class="chip-row" style="margin-bottom:.5rem;">
+                <span class="chip chip-solid">Laravel</span><span class="chip chip-solid">PHP</span><span class="chip chip-solid">MySQL</span>
+                <span class="chip chip-solid">Docker</span><span class="chip chip-solid">REST API</span><span class="chip chip-solid">Linux</span>
+                <span class="chip chip-solid">Nginx</span><span class="chip chip-solid">Redis</span>
+            </div>
+            <p style="font-size:.8rem; color: var(--t3); margin-top:.5rem;">
+                <span data-i18n data-id="Klien" data-en="Clients">Klien</span>: BCA, UOB, Permata, Mandiri, Nobu, Maybank
+            </p>
+        </div>
+
+        <div class="fade-up" style="position:relative;">
+            <span style="position:absolute; left:-41px; top:4px; width:16px; height:16px; border-radius:50%; background:var(--c); box-shadow:0 0 12px var(--c);"></span>
+            <p class="font-mono" style="font-size:.75rem; margin-bottom:.25rem; color: var(--c);">2014 — 2022</p>
+            <h3 class="font-display" style="font-size:1.15rem; font-weight:700; color: var(--t); margin:0 0 .25rem;">PHP Developer / IT Support</h3>
+            <p style="color: var(--t2); margin:0 0 .75rem;">PT Valdo Sumber Mandiri — Jakarta</p>
+            <ul class="bullet-list" style="margin-bottom:.75rem;">
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Memimpin proyek migrasi sistem legacy berbasis Magic (4GL) ke aplikasi web modern menggunakan PHP & Laravel." data-en="Led the migration project of legacy Magic (4GL)-based systems to modern web applications using PHP & Laravel.">Memimpin proyek migrasi sistem legacy berbasis Magic (4GL) ke aplikasi web modern menggunakan PHP & Laravel.</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Mengembangkan sistem Point of Sale (POS) berbasis web menggunakan Laravel untuk operasional toko." data-en="Developed a web-based Point of Sale (POS) system using Laravel for store operations.">Mengembangkan sistem Point of Sale (POS) berbasis web menggunakan Laravel untuk operasional toko.</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Mengelola dan memelihara server, jaringan, serta infrastruktur IT perusahaan." data-en="Managed and maintained company servers, network, and IT infrastructure.">Mengelola dan memelihara server, jaringan, serta infrastruktur IT perusahaan.</span></li>
+                <li><span style="color: var(--c);">▸</span> <span data-i18n data-id="Memberikan dukungan teknis (IT Support) untuk seluruh karyawan dan sistem internal perusahaan." data-en="Provided technical (IT Support) assistance for all employees and internal company systems.">Memberikan dukungan teknis (IT Support) untuk seluruh karyawan dan sistem internal perusahaan.</span></li>
+            </ul>
+            <div class="chip-row">
+                <span class="chip chip-solid">PHP</span><span class="chip chip-solid">Laravel</span><span class="chip chip-solid">CodeIgniter</span>
+                <span class="chip chip-solid">MySQL</span><span class="chip chip-solid">jQuery</span><span class="chip chip-solid">Bootstrap</span>
+                <span class="chip chip-solid">Windows Server</span><span class="chip chip-solid">Mikrotik</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+<section id="skills" class="section-pad max-w-5xl">
+    <div class="fade-up section-head">
+        <p class="font-mono eyebrow" style="color: var(--c);" data-i18n data-id="Kemampuan" data-en="Skills">Kemampuan</p>
+        <h2 class="font-display section-title" style="color: var(--t);" data-i18n data-id="Skill & Keahlian" data-en="Skills & Expertise">Skill & Keahlian</h2>
+    </div>
+
+    <div class="grid-2 gap-10">
+        <div class="fade-up">
+            <p class="font-mono" style="font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; margin-bottom:1rem; color: var(--t2);">Backend</p>
+            <div class="skill-row"><span>🐘 PHP</span><span class="font-mono" style="color:var(--c);">95%</span></div>
+            <div class="sbar"><div class="sfill" data-skill-fill="95"></div></div>
+            <div class="skill-row" style="margin-top:1rem;"><span>🔺 Laravel</span><span class="font-mono" style="color:var(--c);">92%</span></div>
+            <div class="sbar"><div class="sfill" data-skill-fill="92"></div></div>
+            <div class="skill-row" style="margin-top:1rem;"><span>🔥 CodeIgniter</span><span class="font-mono" style="color:var(--c);">94%</span></div>
+            <div class="sbar"><div class="sfill" data-skill-fill="94"></div></div>
+            <div class="skill-row" style="margin-top:1rem;"><span>🍃 Spring Boot</span><span class="font-mono" style="color:var(--c);">75%</span></div>
+            <div class="sbar"><div class="sfill" data-skill-fill="75"></div></div>
+            <div class="skill-row" style="margin-top:1rem;"><span>🔗 REST API</span><span class="font-mono" style="color:var(--c);">90%</span></div>
+            <div class="sbar"><div class="sfill" data-skill-fill="90"></div></div>
+        </div>
+
+        <div class="fade-up">
+            <p class="font-mono" style="font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; margin-bottom:1rem; color: var(--t2);">Database</p>
+            <div class="skill-row"><span>🐬 MySQL</span><span class="font-mono" style="color:var(--c);">92%</span></div>
+            <div class="sbar"><div class="sfill" data-skill-fill="92"></div></div>
+            <div class="skill-row" style="margin-top:1rem;"><span>🦭 MariaDB</span><span class="font-mono" style="color:var(--c);">90%</span></div>
+            <div class="sbar"><div class="sfill" data-skill-fill="90"></div></div>
+            <div class="skill-row" style="margin-top:1rem;"><span>🐘 PostgreSQL</span><span class="font-mono" style="color:var(--c);">82%</span></div>
+            <div class="sbar"><div class="sfill" data-skill-fill="82"></div></div>
+
+            <p class="font-mono" style="font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; margin:1.75rem 0 1rem; color: var(--t2);">DevOps & Tools</p>
+            <div class="chip-row">
+                <span class="chip">🐳 Docker</span>
+                <span class="chip">🐙 GitHub Actions</span>
+                <span class="chip">🦊 GitLab CI/CD</span>
+                <span class="chip">🐍 Python</span>
+                <span class="chip">⚡ JavaScript</span>
+                <span class="chip">🎨 Tailwind CSS</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ TECH STACK MARQUEE ═══════════════════════ -->
+<section id="techstack" class="section-pad-tight">
+    <div class="fade-up section-head max-w-5xl" style="text-align:center;">
+        <p class="font-mono eyebrow" style="color: var(--c);" data-i18n data-id="Tech Stack" data-en="Tech Stack">Tech Stack</p>
+        <h2 class="font-display section-title" style="color: var(--t);" data-i18n data-id="Teknologi yang Digunakan" data-en="Technologies Used">Teknologi yang Digunakan</h2>
+    </div>
+
+    <div style="position:relative;">
+        <div class="mq-track" id="mq-track"></div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ PROJECTS ═══════════════════════ -->
+<section id="projects" class="section-pad max-w-6xl">
+    <div class="fade-up section-head">
+        <p class="font-mono eyebrow" style="color: var(--c);" data-i18n data-id="Proyek" data-en="Projects">Proyek</p>
+        <h2 class="font-display section-title" style="color: var(--t);" data-i18n data-id="Portfolio Proyek" data-en="Project Portfolio">Portfolio Proyek</h2>
+    </div>
+
+    <div class="grid-2 gap-6">
+        <div class="fade-up glass" style="padding:1.5rem; display:flex; flex-direction:column;">
+            <span class="chip chip-solid" style="margin-bottom:.75rem; width:fit-content;">WEB MIGRATION</span>
+            <h3 class="font-display" style="font-size:1.15rem; font-weight:700; color: var(--t); margin:0 0 .5rem;">Migrasi Sistem Magic ke PHP Web</h3>
+            <p style="font-size:.9rem; color: var(--t2); margin:0 0 1rem; line-height:1.6;"
+               data-i18n
+               data-id="Memimpin proyek migrasi sistem operasional perusahaan yang sebelumnya berjalan di atas platform Magic (4GL) — teknologi legacy yang sudah sulit dikembangkan — menjadi aplikasi web modern berbasis PHP dan Laravel. Migrasi dilakukan tanpa mengganggu operasional harian dan tanpa kehilangan data historis."
+               data-en="Led the migration project of the company's operational system, previously running on the Magic (4GL) platform — a legacy technology that had become difficult to maintain — into a modern PHP and Laravel-based web application. The migration was carried out without disrupting daily operations or losing historical data.">
+                Memimpin proyek migrasi sistem operasional perusahaan yang sebelumnya berjalan di atas platform Magic (4GL) — teknologi legacy yang sudah sulit dikembangkan — menjadi aplikasi web modern berbasis PHP dan Laravel. Migrasi dilakukan tanpa mengganggu operasional harian dan tanpa kehilangan data historis.
+            </p>
+            <ul class="bullet-list" style="margin-bottom:1rem; font-size:.9rem;">
+                <li><span style="color: var(--c);">✓</span> <span data-i18n data-id="Migrasi data historis tanpa kehilangan integritas" data-en="Historical data migration without losing integrity">Migrasi data historis tanpa kehilangan integritas</span></li>
+                <li><span style="color: var(--c);">✓</span> <span data-i18n data-id="Antarmuka web modern menggantikan terminal Magic" data-en="Modern web interface replacing the Magic terminal">Antarmuka web modern menggantikan terminal Magic</span></li>
+                <li><span style="color: var(--c);">✓</span> <span data-i18n data-id="Sistem role & permission yang lebih granular" data-en="More granular role & permission system">Sistem role & permission yang lebih granular</span></li>
+            </ul>
+            <div class="chip-row">
+                <span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">MySQL</span><span class="chip">jQuery</span><span class="chip">Bootstrap</span>
+            </div>
+        </div>
+
+        <div class="fade-up glass" style="padding:1.5rem; display:flex; flex-direction:column;">
+            <span class="chip chip-solid" style="margin-bottom:.75rem; width:fit-content;">POS SYSTEM</span>
+            <h3 class="font-display" style="font-size:1.15rem; font-weight:700; color: var(--t); margin:0 0 .5rem;">Sistem POS Berbasis Web</h3>
+            <p style="font-size:.9rem; color: var(--t2); margin:0 0 1rem; line-height:1.6;"
+               data-i18n
+               data-id="Mengembangkan sistem Point of Sale berbasis web menggunakan Laravel untuk mendukung operasional penjualan toko secara real-time, mencakup pencatatan transaksi, manajemen stok, dan pelaporan penjualan harian."
+               data-en="Developed a web-based Point of Sale system using Laravel to support real-time store sales operations, including transaction recording, inventory management, and daily sales reporting.">
+                Mengembangkan sistem Point of Sale berbasis web menggunakan Laravel untuk mendukung operasional penjualan toko secara real-time, mencakup pencatatan transaksi, manajemen stok, dan pelaporan penjualan harian.
+            </p>
+            <ul class="bullet-list" style="margin-bottom:1rem; font-size:.9rem;">
+                <li><span style="color: var(--c);">✓</span> <span data-i18n data-id="Pencatatan transaksi penjualan real-time" data-en="Real-time sales transaction recording">Pencatatan transaksi penjualan real-time</span></li>
+                <li><span style="color: var(--c);">✓</span> <span data-i18n data-id="Manajemen stok otomatis" data-en="Automated inventory management">Manajemen stok otomatis</span></li>
+                <li><span style="color: var(--c);">✓</span> <span data-i18n data-id="Laporan penjualan harian & bulanan" data-en="Daily & monthly sales reports">Laporan penjualan harian & bulanan</span></li>
+                <li><span style="color: var(--c);">✓</span> <span data-i18n data-id="Antarmuka kasir yang ramah pengguna" data-en="User-friendly cashier interface">Antarmuka kasir yang ramah pengguna</span></li>
+            </ul>
+            <div class="chip-row">
+                <span class="chip">Laravel</span><span class="chip">MySQL</span><span class="chip">jQuery</span><span class="chip">Bootstrap</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<section id="contact" class="section-pad max-w-5xl">
+    <div class="fade-up section-head">
+        <p class="font-mono eyebrow" style="color: var(--c);" data-i18n data-id="Kontak" data-en="Contact">Kontak</p>
+        <h2 class="font-display section-title" style="color: var(--t);" data-i18n data-id="Mari Berdiskusi" data-en="Let's Talk">Mari Berdiskusi</h2>
+    </div>
+
+    <div class="grid-2 gap-10">
+        <div class="fade-up" style="display:flex; flex-direction:column; gap:1rem;">
+            <a href="mailto:vflanker@gmail.com" class="glass contact-card" data-cursor-hover>
+                <span style="font-size:1.3rem;">✉</span>
+                <div>
+                    <p class="font-mono" style="font-size:.7rem; text-transform:uppercase; color: var(--t3); margin:0;" data-i18n data-id="Email" data-en="Email">Email</p>
+                    <p style="font-size:.9rem; color: var(--t); margin:0;">vflanker@gmail.com</p>
+                </div>
+            </a>
+
+            <a href="https://wa.me/6287838627072" target="_blank" rel="noopener" class="glass contact-card" data-cursor-hover>
+                <span style="font-size:1.3rem;">📱</span>
+                <div>
+                    <p class="font-mono" style="font-size:.7rem; text-transform:uppercase; color: var(--t3); margin:0;">WhatsApp</p>
+                    <p style="font-size:.9rem; color: var(--t); margin:0;">0878-3862-7072</p>
+                </div>
+            </a>
+
+            <div class="glass contact-card" style="cursor:default;">
+                <span style="font-size:1.3rem;">📍</span>
+                <div>
+                    <p class="font-mono" style="font-size:.7rem; text-transform:uppercase; color: var(--t3); margin:0;" data-i18n data-id="Lokasi" data-en="Location">Lokasi</p>
+                    <p style="font-size:.9rem; color: var(--t); margin:0;">Bekasi, Indonesia 17610</p>
+                </div>
+            </div>
+        </div>
+
+        <form id="contact-form" data-contact-email="vflanker@gmail.com" class="fade-up" style="display:flex; flex-direction:column; gap:1rem;">
+            <div>
+                <label class="font-mono" style="display:block; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.4rem; color: var(--t2);" data-i18n data-id="Nama Lengkap" data-en="Full Name">Nama Lengkap</label>
+                <input type="text" name="name" required class="glass form-input">
+            </div>
+            <div>
+                <label class="font-mono" style="display:block; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.4rem; color: var(--t2);" data-i18n data-id="Alamat Email" data-en="Email Address">Alamat Email</label>
+                <input type="email" name="email" required class="glass form-input">
+            </div>
+            <div>
+                <label class="font-mono" style="display:block; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.4rem; color: var(--t2);" data-i18n data-id="Subjek" data-en="Subject">Subjek</label>
+                <input type="text" name="subject" class="glass form-input">
+            </div>
+            <div>
+                <label class="font-mono" style="display:block; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.4rem; color: var(--t2);" data-i18n data-id="Pesan" data-en="Message">Pesan</label>
+                <textarea name="message" rows="4" required class="glass form-input" style="resize:none;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-c" style="justify-content:center;" data-cursor-hover>
+                <span data-i18n data-id="Kirim Pesan" data-en="Send Message">Kirim Pesan</span>
+            </button>
+            <p id="contact-form-feedback" class="font-mono hidden" style="font-size:.75rem;"></p>
+        </form>
+    </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer style="padding:2.5rem 1.5rem; border-top:1px solid var(--gb); text-align:center;">
+    <p class="font-mono" style="font-size:.75rem; color: var(--t3); margin:0;">
+        © 2026 Ade Ramadona. <span data-i18n data-id="Seluruh hak cipta dilindungi." data-en="All rights reserved.">Seluruh hak cipta dilindungi.</span>
+    </p>
+    <p class="font-mono" style="font-size:.6rem; color: var(--t3); margin:.5rem 0 0;">
+        <span data-i18n data-id="Dibangun dengan" data-en="Built with">Dibangun dengan</span> Laravel 12 · Livewire · Tailwind CSS
+    </p>
+</footer>
+
+</div><!-- /#scroll-sections -->
+
+<style>
+.section-pad { padding: 5rem 1.5rem; max-width: 64rem; margin: 0 auto; }
+.section-pad-tight { padding: 5rem 0; overflow: hidden; }
+.max-w-6xl.section-pad { max-width: 72rem; }
+.max-w-4xl.section-pad { max-width: 56rem; }
+.section-head { margin-bottom: 3rem; text-align: center; }
+.eyebrow { font-size: .65rem; text-transform: uppercase; letter-spacing: .15em; margin-bottom: .5rem; }
+.section-title { font-weight: 700; font-size: 1.9rem; margin: 0; }
+.grid-2 { display: grid; grid-template-columns: 1fr; }
+.gap-10 { gap: 2.5rem; }
+.gap-6 { gap: 1.5rem; }
+.bullet-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .5rem; }
+.bullet-list li { display: flex; align-items: flex-start; gap: .5rem; font-size: .9rem; color: var(--t2); }
+.chip-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip { font-size: .7rem; font-family: 'JetBrains Mono', monospace; padding: .4rem .9rem; border-radius: 999px; border: 1px solid var(--cb); color: var(--c); background: transparent; }
+.chip-solid { background: var(--cg); border: none; border-radius: 4px; padding: .35rem .65rem; }
+.skill-row { display: flex; justify-content: space-between; font-size: .9rem; margin-bottom: .4rem; color: var(--t); }
+.contact-card { display: flex; align-items: center; gap: .9rem; padding: 1rem; text-decoration: none; color: inherit; }
+.form-input { width: 100%; border-radius: 8px; padding: .8rem 1rem; font-size: .9rem; background: transparent; outline: none; border: 1px solid var(--gb); color: var(--t); }
+.form-input:focus { border-color: var(--c); }
+.hidden { display: none !important; }
+.mobile-menu-panel { display: flex; flex-direction: column; }
+.mobile-menu-panel.hidden { display: none !important; }
+
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .section-head { text-align: left; }
+  .hero-text { text-align: left !important; }
+  .hero-text > div:last-child { justify-content: flex-start !important; }
+  .hero-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 767px) {
+  #desktop-nav { display: none !important; }
+  #mobile-menu-toggle { display: block !important; }
+}
+@media (min-width: 768px) {
+  #mobile-menu, #mobile-menu-toggle { display: none !important; }
+}
+</style>
+
+<script src="main.js"></script>
+<script>
+  // Isi marquee tech stack secara dinamis (2x list untuk loop mulus)
+  (function () {
+    const stacks = ['Laravel', 'PHP', 'CodeIgniter', 'Spring Boot', 'Docker', 'GitHub Actions', 'GitLab CI', 'MySQL', 'MariaDB', 'PostgreSQL', 'Redis', 'Nginx', 'Ubuntu', 'Windows Server', 'Mikrotik'];
+    const track = document.getElementById('mq-track');
+    if (!track) return;
+    for (let r = 0; r < 2; r++) {
+      stacks.forEach((name) => {
+        const item = document.createElement('div');
+        item.className = 'glass';
+        item.title = name;
+        item.style.cssText = 'margin:0 .75rem; width:80px; height:80px; border-radius:12px; display:flex; align-items:center; justify-content:center; padding:.75rem; flex-shrink:0;';
+        item.innerHTML = `<span style="font-size:.6rem; font-family:'JetBrains Mono',monospace; text-align:center; line-height:1.2; color:var(--c);">${name}</span>`;
+        track.appendChild(item);
+      });
+    }
+  })();
+</script>
+</body>
+</html>
