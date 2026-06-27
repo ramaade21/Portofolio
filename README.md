@@ -15,17 +15,18 @@ cursor, particle background, typing effect, dll).
 index.html   → halaman utama (semua section: hero, about, experience, skills, projects, contact)
 style.css    → semua styling (port dari resources/css/app.css)
 main.js      → semua interaksi (port dari resources/js/app.js + modules/*)
+avatar.jpg   → foto profil kamu
 ```
 
 ## Cara upload ke GitHub Pages
 
 1. Buat repository baru di GitHub, misalnya `portfolio-ade`.
-2. Upload ketiga file di atas (`index.html`, `style.css`, `main.js`) ke root
+2. Upload keempat file di atas (`index.html`, `style.css`, `main.js`, `avatar.jpg`) ke root
    repository tersebut — bisa lewat web (Add file → Upload files) atau lewat
    git:
    ```bash
    git init
-   git add index.html style.css main.js
+   git add index.html style.css main.js avatar.jpg
    git commit -m "Portfolio statis"
    git branch -M main
    git remote add origin https://github.com/USERNAME/portfolio-ade.git
@@ -50,11 +51,17 @@ form kontak lewat backend, beberapa hal disesuaikan untuk versi statis ini:
   email tanpa backend sendiri, kamu bisa pakai layanan pihak ketiga seperti
   [Formspree](https://formspree.io) atau [Web3Forms](https://web3forms.com) —
   cukup ganti `action` pada elemen `<form id="contact-form">` di `index.html`.
-- **Avatar foto profil**: di data aslinya avatar belum diupload (masih `null`,
-  diisi lewat dashboard admin), jadi versi statis ini menampilkan inisial
-  "AR" sebagai pengganti foto. Kalau kamu punya foto, tinggal ganti elemen
-  `<span class="font-display"...>AR</span>` di bagian hero dengan tag
-  `<img src="foto-kamu.jpg">`.
+- **Efek "buku" (flipbook)**: tombol "Lihat Profil" di hero membuka tampilan
+  buku 9 halaman (cover, about, pendidikan, pengalaman, skill, tech stack,
+  proyek, sertifikat, kontak) dengan animasi membalik halaman 3D — dibuat
+  murni dengan CSS 3D transform + vanilla JS (tanpa library/CDN eksternal),
+  supaya selalu jalan dengan andal di GitHub Pages tanpa risiko gagal load.
+  Navigasi: tombol ‹ › di pojok kanan atas, keyboard (←/→/Esc), atau swipe
+  di HP.
+- **Avatar foto profil**: foto asli kamu (`avatar.jpg`, hasil crop dari CV) sudah
+  terpasang di cover hero dan cover flipbook — pastikan file `avatar.jpg` ikut
+  diupload ke repo GitHub kamu di folder yang sama dengan `index.html`, atau
+  foto tidak akan muncul.
 - **Tombol "Download CV"** dihapus dari hero karena belum ada file CV yang
   diupload di project asli. Kalau sudah punya file CV (PDF), upload filenya
   ke repository lalu tambahkan tombol link ke file tersebut.
