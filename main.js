@@ -234,23 +234,116 @@ function initSkillBars() {
     bars.forEach((el) => observer.observe(el));
 }
 
-/* ── Flip-book open/close (versi sederhana: tampilkan/sembunyikan section) ── */
+/* ── Flip-book custom (vanilla JS + CSS 3D transform) ──
+   Efek membalik halaman seperti buku asli, tanpa dependency CDN eksternal
+   supaya selalu jalan di GitHub Pages / hosting statis apa pun. */
 function initFlipBook() {
     const openBtn = document.getElementById('open-book-btn');
-    const bookCover = document.getElementById('book-cover');
-    const closeBtn = document.querySelector('[data-close-book]');
-    const heroSection = document.getElementById('home');
-    const sectionsWrapper = document.getElementById('scroll-sections');
+    const bookCoverEl = document.getElementById('book-cover');
+    const closeBtns = document.querySelectorAll('[data-close-book]');
+    const container = document.getElementById('flipbook-container');
+    const flipbookEl = document.getElementById('flipbook');
+    const prevBtn = document.querySelector('[data-flip-prev]');
+    const nextBtn = document.querySelector('[data-flip-next]');
+    const indicator = document.querySelector('[data-page-indicator]');
+
+    if (!container || !flipbookEl) return;
+
+    const pages = Array.from(flipbookEl.querySelectorAll('.page'));
+    const total = pages.length;
+    let current = 0;
+    let animating = false;
+
+    // Bungkus tiap .page dengan struktur front/back untuk efek flip 3D,
+    // dan beri z-index awal supaya stacking benar.
+    pages.forEach((page, i) => {
+        page.classList.add('fb-page');
+        page.style.zIndex = String(total - i);
+        if (i === 0) page.classList.add('fb-active');
+    });
+
+    function updateIndicator() {
+        if (indicator) indicator.textContent = `${current + 1} / ${total}`;
+        if (prevBtn) prevBtn.disabled = current === 0;
+        if (nextBtn) nextBtn.disabled = current === total - 1;
+    }
+
+    function goTo(index, direction) {
+        if (animating || index < 0 || index >= total || index === current) return;
+        animating = true;
+
+        const forward = direction === 'next';
+        const activePage = pages[forward ? current : index];
+        const targetPage = pages[forward ? index : current];
+
+        activePage.style.zIndex = String(total + 2);
+        targetPage.style.zIndex = String(total + 1);
+
+        // Mulai dengan halaman aktif membalik keluar
+        requestAnimationFrame(() => {
+            activePage.classList.add(forward ? 'fb-flip-next' : 'fb-flip-prev');
+        });
+
+        // Di tengah animasi (saat halaman lama sudah "tegak lurus"/tak terlihat),
+        // baru tampilkan halaman target agar terkesan halaman baru terbuka.
+        setTimeout(() => {
+            targetPage.classList.add('fb-active');
+        }, 320);
+
+        setTimeout(() => {
+            activePage.classList.remove('fb-flip-next', 'fb-flip-prev', 'fb-active');
+            activePage.style.zIndex = String(total - (forward ? index : current));
+            targetPage.style.zIndex = String(total - (forward ? index : current));
+            current = index;
+            updateIndicator();
+            animating = false;
+        }, 650);
+    }
+
+    function next() { goTo(current + 1, 'next'); }
+    function prev() { goTo(current - 1, 'prev'); }
 
     function openBook() {
-        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+        container.classList.remove('hidden');
+        container.classList.add('is-open');
+        document.getElementById('home')?.style.setProperty('display', 'none');
+        document.getElementById('scroll-sections')?.style.setProperty('display', 'none');
+        document.querySelector('footer')?.style.setProperty('display', 'none');
+        window.scrollTo({ top: 0 });
+        updateIndicator();
+    }
+
+    function closeBook() {
+        container.classList.add('hidden');
+        container.classList.remove('is-open');
+        document.getElementById('home')?.style.removeProperty('display');
+        document.getElementById('scroll-sections')?.style.removeProperty('display');
+        document.querySelector('footer')?.style.removeProperty('display');
     }
 
     openBtn?.addEventListener('click', openBook);
-    bookCover?.addEventListener('click', openBook);
-    closeBtn?.addEventListener('click', () => {
-        heroSection?.scrollIntoView({ behavior: 'smooth' });
+    bookCoverEl?.addEventListener('click', openBook);
+    closeBtns.forEach((btn) => btn.addEventListener('click', closeBook));
+    nextBtn?.addEventListener('click', next);
+    prevBtn?.addEventListener('click', prev);
+
+    // Navigasi keyboard saat buku terbuka
+    document.addEventListener('keydown', (e) => {
+        if (!container.classList.contains('is-open')) return;
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft') prev();
+        if (e.key === 'Escape') closeBook();
     });
+
+    // Swipe untuk mobile
+    let touchStartX = null;
+    flipbookEl.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    flipbookEl.addEventListener('touchend', (e) => {
+        if (touchStartX === null) return;
+        const diff = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(diff) > 50) { diff < 0 ? next() : prev(); }
+        touchStartX = null;
+    }, { passive: true });
 }
 
 /* ── Contact form (mailto fallback, tidak ada backend di static site) ── */
